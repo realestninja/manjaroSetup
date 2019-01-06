@@ -1,3 +1,4 @@
+clear
 echo '##############################'
 echo '#                            #'
 echo "#   Nikhil's Manjaro Setup   #"
@@ -15,11 +16,13 @@ fi
 
 if [ ! -d ~/Dotfiles ]; then
 	echo ''
-	echo 'Create Dotfiles?'
+	echo 'Create Dotfiles and symlinks?'
 	read answer
 	if [[ $answer == y* ]]; then
 		mkdir ~/Dotfiles
 		git clone git@github.com:realestninja/Dotfiles.git ~/Dotfiles
+		ln -s ~/Dotfiles/vim/.vimrc ~
+		ln -s ~/Dotfiles/alsa/.asoundrc ~
 	fi
 fi
 
@@ -30,6 +33,14 @@ if [ ! -d ~/Pictures/Screenshots ]; then
 	if [[ $answer == y* ]]; then
 		mkdir ~/Pictures/Screenshots
 	fi
+fi
+
+echo ''
+echo 'Download base16-shell?'
+read answer
+if [[ $answer == y* ]]; then
+	mkdir ~/Dotfiles
+	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
 
 if [ ! -d ~/temp ]; then
@@ -57,6 +68,9 @@ if [[ $answer == y* ]]; then
   sudo pacman -S filezilla
   sudo pacman -S tmux
   sudo pacman -S telegram-desktop
+  sudo pacman -S unzip
+  sudo pacman -S zip
+  sudo pacman -S unrar
 fi
 
 
@@ -139,18 +153,16 @@ if [[ $answer == y* ]]; then
   sudo npm i -g eslint
 fi
 
-if [ ! -d ~/.ssh ]; then
-	echo ''
-	echo 'Create ssh key?'
-	read answer
-	if [[ $answer == y* ]]; then
-		read email
-		ssh-keygen -t rsa -b 4096 -C "$email"
-		eval "$(ssh-agent -s)"
-		ssh-add ~/.ssh/id_rsa
-		xclip -sel clip < ~/.ssh/id_rsa.pub
-		xdg-open https://github.com/settings/keys
-	fi
+echo ''
+echo 'Create ssh key?'
+read answer
+if [[ $answer == y* ]]; then
+	read email
+	ssh-keygen -t rsa -b 4096 -C "$email"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+	xdg-open https://github.com/settings/keys
 fi
 
 echo ''
