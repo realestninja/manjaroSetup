@@ -158,6 +158,7 @@ if [[ $answer == y* ]]; then
   sudo pacman -S unrar
   sudo pacman -S timeshift
   sudo pacman -S thunderbird
+  sudo pacman -S tk #fixes gitk
   yay -S xcursor-dmz
   yay -S google-chrome
   yay -S spotify
