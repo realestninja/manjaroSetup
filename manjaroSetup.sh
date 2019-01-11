@@ -20,9 +20,15 @@ if [ ! -d ~/Dotfiles ]; then
 	read answer
 	if [[ $answer == y* ]]; then
 		mkdir ~/Dotfiles
+		mkdir ~/defaultBackups
 		git clone git@github.com:realestninja/Dotfiles.git ~/Dotfiles
+
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		ln -s ~/Dotfiles/alsa/.asoundrc ~
+		ln -s ~/Dotfiles/profile/.profile ~
+
+		mv ~/.Xresources ~/defaultBackups
+		ln -s ~/Dotfiles/Xresources/.Xresources ~
 	fi
 fi
 
