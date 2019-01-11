@@ -1,3 +1,2 @@
 fonts
 compare bashrc
-compare i3conf

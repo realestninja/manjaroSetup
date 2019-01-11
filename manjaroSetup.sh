@@ -45,7 +45,6 @@ echo ''
 echo 'Download base16-shell?'
 read answer
 if [[ $answer == y* ]]; then
-	mkdir ~/Dotfiles
 	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
 
@@ -56,27 +55,6 @@ if [ ! -d ~/temp ]; then
 	if [[ $answer == y* ]]; then
 		mkdir ~/temp
 	fi
-fi
-
-
-echo ''
-echo 'Install Software?'
-read answer
-if [[ $answer == y* ]]; then
-  sudo pacman -S neofetch
-  sudo pacman -S feh
-  sudo pacman -S texlive-most texlive-lang
-  sudo pacman -S cowsay
-  sudo pacman -S fortune-mod
-  sudo pacman -S xclip
-  sudo pacman -S clementine
-  sudo pacman -S gthumb
-  sudo pacman -S filezilla
-  sudo pacman -S tmux
-  sudo pacman -S telegram-desktop
-  sudo pacman -S unzip
-  sudo pacman -S zip
-  sudo pacman -S unrar
 fi
 
 
@@ -105,45 +83,90 @@ if [ ~/temp ]; then
 	fi
 
 	echo ''
-	echo 'Install latest Google Chrome?'
+	echo 'Install yay?'
 	read answer
 	if [[ $answer == y* ]]; then
 		cd ~/temp
-		git clone https://aur.archlinux.org/google-chrome.git
-		cd google-chrome/
-		makepkg -s
-		sudo pacman -U --noconfirm google-chrome*.tar.xz
+		git clone https://aur.archlinux.org/yay.git
+		cd yay
+		makepkg -si
 		cd ~
 	fi
 
-	echo ''
-	echo 'Install Spotify?'
-	read answer
-	if [[ $answer == y* ]]; then
-		cd ~/temp
-		git clone https://aur.archlinux.org/spotify.git
-		cd spotify
-		makepkg -s
-		sudo pacman -U --noconfirm spotify*.tar.xz
-		cd ~
-	fi
+	# echo ''
+	# echo 'Install latest Google Chrome?'
+	# read answer
+	# if [[ $answer == y* ]]; then
+		# cd ~/temp
+		# git clone https://aur.archlinux.org/google-chrome.git
+		# cd google-chrome/
+		# makepkg -si
+		# cd ~
+	# fi
 
-	echo ''
-	echo 'Install Unimatrix?'
-	read answer
-	if [[ $answer == y* ]]; then
-		cd ~/temp
-		git clone https://aur.archlinux.org/unimatrix-git.git
-		cd unimatrix-git/
-		makepkg -s
-		sudo pacman -U --noconfirm unimatrix-git*.tar.xz
-		cd ~
-	fi
+	# echo ''
+	# echo 'Install Spotify?'
+	# read answer
+	# if [[ $answer == y* ]]; then
+		# cd ~/temp
+		# git clone https://aur.archlinux.org/spotify.git
+		# cd spotify
+		# makepkg -si
+		# cd ~
+	# fi
+
+	# echo ''
+	# echo 'Install Unimatrix?'
+	# read answer
+	# if [[ $answer == y* ]]; then
+		# cd ~/temp
+		# git clone https://aur.archlinux.org/unimatrix-git.git
+		# cd unimatrix-git/
+		# makepkg -si
+		# cd ~
+	# fi
+
+	# echo ''
+	# echo 'Install Slack?'
+	# read answer
+	# if [[ $answer == y* ]]; then
+		# cd ~/temp
+		# git clone https://aur.archlinux.org/slack-desktop.git
+		# cd slack-desktop/
+		# makepkg -si
+		# cd ~
+	# fi
 fi
 
+echo ''
+echo 'Install Software?'
+read answer
+if [[ $answer == y* ]]; then
+  sudo pacman -S neofetch
+  sudo pacman -S feh
+  sudo pacman -S texlive-most texlive-lang
+  sudo pacman -S cowsay
+  sudo pacman -S fortune-mod
+  sudo pacman -S xclip
+  sudo pacman -S clementine
+  sudo pacman -S gthumb
+  sudo pacman -S filezilla
+  sudo pacman -S tmux
+  sudo pacman -S telegram-desktop
+  sudo pacman -S unzip
+  sudo pacman -S zip
+  sudo pacman -S unrar
+  sudo pacman -S timeshift
+  sudo pacman -S thunderbird
+  yay -S xcursor-dmz
+  yay -S google-chrome
+  yay -S spotify
+  yay -S unimatrix-git
+  yay -S slack-desktop
+fi
 
 echo ''
-echo "Install Developer's Software?"
+echo "Install nodejs, npm, ruby etc.?"
 read answer
 if [[ $answer == y* ]]; then
   sudo pacman -S nodejs
