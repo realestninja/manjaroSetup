@@ -164,6 +164,7 @@ if [[ $answer == y* ]]; then
   yay -S spotify
   yay -S unimatrix-git
   yay -S slack-desktop
+  yay -S jmtpfs
 fi
 
 echo ''
