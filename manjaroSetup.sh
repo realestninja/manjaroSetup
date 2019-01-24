@@ -5,6 +5,10 @@ echo "#   Nikhil's Manjaro Setup   #"
 echo '#                            #'
 echo '##############################'
 
+sudo ufw enable
+echo ''
+echo 'Uncomplicated Firewall activated'
+
 echo ''
 echo 'Update System?'
 read answer
