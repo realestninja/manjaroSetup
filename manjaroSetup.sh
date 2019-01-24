@@ -61,12 +61,17 @@ fi
 if [ ! -d ~/Dotfiles ]; then
 	if [[ $do_symlinks == y* ]]; then
 		mkdir ~/Dotfiles
+		mkdir ~/Code
 		mkdir ~/defaultBackups
 		git clone git@github.com:realestninja/Dotfiles.git ~/Dotfiles
 
 		echo 'Creating symlinks:'
 
-		# to do: bashrc
+		ln -s ~/Dotfiles/bash/.bashrc ~
+		echo '.bashrc done'
+		ln -s ~/Dotfiles/bash/.bash_aliases ~
+		echo '.bash_aliases done'
+
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		echo '.vimrc done'
 
