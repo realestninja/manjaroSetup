@@ -10,64 +10,114 @@ echo ''
 echo 'Uncomplicated Firewall activated'
 
 echo ''
+echo 'What shall be done?'
+
+echo ''
 echo 'Update System?'
-read answer
-if [[ $answer == y* ]]; then
+read do_update
+
+echo ''
+echo 'Create Dotfiles and symlinks?'
+read do_symlinks
+
+echo ''
+echo 'Create folder for screenshots?'
+read do_screenshot_folder
+
+echo ''
+echo 'Download base16-shell?'
+read base_16
+
+echo ''
+echo 'Create temp folder?'
+read temp_folder
+
+echo ''
+echo 'Build vim?'
+read do_vim
+
+echo ''
+echo 'Install yay?'
+read do_yay
+
+echo ''
+echo 'Install Software?'
+read do_software
+
+echo ''
+echo 'Get LaTeX?'
+read do_latex
+
+echo ''
+echo 'Install nodejs, npm, ruby etc.?'
+read do_dev_software
+
+echo 'Get Vimium for Google Chrome?'
+read do_vimium
+
+echo 'All clear!'
+
+if [[ $do_update == y* ]]; then
   sudo pacman-db-upgrade && sync
   sudo pacman -Syu
 fi
 
-
 if [ ! -d ~/Dotfiles ]; then
-	echo ''
-	echo 'Create Dotfiles and symlinks?'
-	read answer
-	if [[ $answer == y* ]]; then
+	if [[ $do_symlinks == y* ]]; then
 		mkdir ~/Dotfiles
+		mkdir ~/Code
 		mkdir ~/defaultBackups
 		git clone git@github.com:realestninja/Dotfiles.git ~/Dotfiles
 
+		echo 'Creating symlinks:'
+
+		ln -s ~/Dotfiles/bash/.bashrc ~
+		echo '.bashrc done'
+		ln -s ~/Dotfiles/bash/.bash_aliases ~
+		echo '.bash_aliases done'
+
 		ln -s ~/Dotfiles/vim/.vimrc ~
+		echo '.vimrc done'
+
 		ln -s ~/Dotfiles/alsa/.asoundrc ~
+		echo '.asoundrc done'
+
 		ln -s ~/Dotfiles/profile/.profile ~
+		echo '.profile done'
 
 		mv ~/.Xresources ~/defaultBackups
 		ln -s ~/Dotfiles/Xresources/.Xresources ~
+		echo '.Xresources done'
+
+		mv ~/.i3/config ~/defaultBackups/config_i3
+		ln -s ~/Dotfiles/i3config/config ~/.i3/config
+		echo 'i3 config done'
+
+		sudo ln -s ~/Dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
+		echo 'create_i3_config done'
+		sudo chmod a+x /usr/local/bin/create_i3_config
+		echo 'chmod a+x has been applied'
 	fi
 fi
 
 if [ ! -d ~/Pictures/Screenshots ]; then
-	echo ''
-	echo 'Create folder for screenshots?'
-	read answer
-	if [[ $answer == y* ]]; then
+	if [[ $do_screenshot_folder == y* ]]; then
 		mkdir ~/Pictures/Screenshots
 	fi
 fi
 
-echo ''
-echo 'Download base16-shell?'
-read answer
-if [[ $answer == y* ]]; then
+if [[ $base_16 == y* ]]; then
 	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
 
 if [ ! -d ~/temp ]; then
-	echo ''
-	echo 'Create temp folder?'
-	read answer
-	if [[ $answer == y* ]]; then
+	if [[ $temp_folder == y* ]]; then
 		mkdir ~/temp
 	fi
 fi
 
-
-
 if [ ~/temp ]; then
-	echo ''
-	echo 'Build vim?'
-	read answer
-	if [[ $answer == y* ]]; then
+	if [[ $do_vim == y* ]]; then
 		sudo pacman -R vim
 		cd ~/temp/
 		git clone --depth 1 https://github.com/vim/vim.git
@@ -86,118 +136,54 @@ if [ ~/temp ]; then
 		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	fi
 
-	echo ''
-	echo 'Install yay?'
-	read answer
-	if [[ $answer == y* ]]; then
+	if [[ $do_yay == y* ]]; then
 		cd ~/temp
 		git clone https://aur.archlinux.org/yay.git
 		cd yay
 		makepkg -si
 		cd ~
 	fi
-
-	# echo ''
-	# echo 'Install latest Google Chrome?'
-	# read answer
-	# if [[ $answer == y* ]]; then
-		# cd ~/temp
-		# git clone https://aur.archlinux.org/google-chrome.git
-		# cd google-chrome/
-		# makepkg -si
-		# cd ~
-	# fi
-
-	# echo ''
-	# echo 'Install Spotify?'
-	# read answer
-	# if [[ $answer == y* ]]; then
-		# cd ~/temp
-		# git clone https://aur.archlinux.org/spotify.git
-		# cd spotify
-		# makepkg -si
-		# cd ~
-	# fi
-
-	# echo ''
-	# echo 'Install Unimatrix?'
-	# read answer
-	# if [[ $answer == y* ]]; then
-		# cd ~/temp
-		# git clone https://aur.archlinux.org/unimatrix-git.git
-		# cd unimatrix-git/
-		# makepkg -si
-		# cd ~
-	# fi
-
-	# echo ''
-	# echo 'Install Slack?'
-	# read answer
-	# if [[ $answer == y* ]]; then
-		# cd ~/temp
-		# git clone https://aur.archlinux.org/slack-desktop.git
-		# cd slack-desktop/
-		# makepkg -si
-		# cd ~
-	# fi
 fi
 
-echo ''
-echo 'Install Software?'
-read answer
-if [[ $answer == y* ]]; then
-  sudo pacman -S neofetch
-  sudo pacman -S feh
-  sudo pacman -S texlive-most texlive-lang
-  sudo pacman -S cowsay
-  sudo pacman -S fortune-mod
-  sudo pacman -S xclip
-  sudo pacman -S clementine
-  sudo pacman -S gthumb
-  sudo pacman -S filezilla
-  sudo pacman -S tmux
-  sudo pacman -S telegram-desktop
-  sudo pacman -S unzip
-  sudo pacman -S zip
-  sudo pacman -S unrar
-  sudo pacman -S timeshift
-  sudo pacman -S thunderbird
-  sudo pacman -S tk #fixes gitk
-  yay -S xcursor-dmz
-  yay -S google-chrome
-  yay -S spotify
-  yay -S unimatrix-git
-  yay -S slack-desktop
-  yay -S jmtpfs
+if [[ $do_software == y* ]]; then
+  sudo pacman -S --noconfirm neofetch
+  sudo pacman -S --noconfirm feh
+  sudo pacman -S --noconfirm cowsay
+  sudo pacman -S --noconfirm fortune-mod
+  sudo pacman -S --noconfirm xclip
+  sudo pacman -S --noconfirm clementine
+  sudo pacman -S --noconfirm gthumb
+  sudo pacman -S --noconfirm filezilla
+  sudo pacman -S --noconfirm tmux
+  sudo pacman -S --noconfirm telegram-desktop
+  sudo pacman -S --noconfirm unzip
+  sudo pacman -S --noconfirm zip
+  sudo pacman -S --noconfirm unrar
+  sudo pacman -S --noconfirm timeshift
+  sudo pacman -S --noconfirm thunderbird
+  sudo pacman -S --noconfirm tk #fixes gitk
+  yay -S --noconfirm xcursor-dmz
+  yay -S --noconfirm google-chrome
+  yay -S --noconfirm spotify
+  yay -S --noconfirm unimatrix-git
+  yay -S --noconfirm slack-desktop
+  yay -S --noconfirm jmtpfs
 fi
 
-echo ''
-echo "Install nodejs, npm, ruby etc.?"
-read answer
-if [[ $answer == y* ]]; then
-  sudo pacman -S nodejs
-  sudo pacman -S npm
-  sudo pacman -S ruby
-  sudo pacman -S lua51
+if [[ $do_latex == y* ]]; then
+  sudo pacman -S --noconfirm texlive-most texlive-lang
 fi
 
-echo ''
-echo 'Install Global Node Modules?'
-read answer
-if [[ $answer == y* ]]; then
+if [[ $do_dev_software == y* ]]; then
+  sudo pacman -S --noconfirm nodejs
+  sudo pacman -S --noconfirm npm
   sudo npm i -g eslint
+  sudo pacman -S --noconfirm ruby
+  sudo pacman -S --noconfirm lua51
 fi
 
-echo ''
-echo 'Create ssh key?'
-read answer
-if [[ $answer == y* ]]; then
-	read email
-	ssh-keygen -t rsa -b 4096 -C "$email"
-	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/id_rsa
-	xclip -sel clip < ~/.ssh/id_rsa.pub
-	xdg-open https://github.com/settings/keys
+if [[ $do_vimium == y* ]]; then
+  xdg-open https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb/related
 fi
 
 echo ''
