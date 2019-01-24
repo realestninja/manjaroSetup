@@ -48,6 +48,9 @@ echo ''
 echo 'Install nodejs, npm, ruby etc.?'
 read do_dev_software
 
+echo 'Get Vimium for Google Chrome?'
+read do_vimium
+
 echo 'All clear!'
 
 if [[ $do_update == y* ]]; then
@@ -167,6 +170,10 @@ if [[ $do_dev_software == y* ]]; then
   sudo npm i -g eslint
   sudo pacman -S --noconfirm ruby
   sudo pacman -S --noconfirm lua51
+fi
+
+if [[ $do_vimium == y* ]]; then
+  xdg-open https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb/related
 fi
 
 echo ''
