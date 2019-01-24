@@ -13,10 +13,6 @@ echo ''
 echo 'What shall be done?'
 
 echo ''
-echo 'Update System?'
-read do_update
-
-echo ''
 echo 'Create Dotfiles and symlinks?'
 read do_symlinks
 
@@ -56,11 +52,6 @@ echo 'Get Vimium for Google Chrome?'
 read do_vimium
 
 echo 'All clear!'
-
-if [[ $do_update == y* ]]; then
-  sudo pacman-db-upgrade && sync
-  sudo pacman -Syu
-fi
 
 if [ ! -d ~/Dotfiles ]; then
 	if [[ $do_symlinks == y* ]]; then

@@ -9,6 +9,9 @@ echo "#         PreScript          #"
 echo '#                            #'
 echo '##############################'
 
+sudo pacman-db-upgrade && sync
+sudo pacman -Syu
+
 echo 'xclip required. Downloading now.'
 sudo pacman -S xclip
 
