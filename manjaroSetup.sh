@@ -80,6 +80,10 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/Xresources/.Xresources ~
 		echo '.Xresources done'
 
+		mkdir ~/.config/polybar
+		ln -s ~/Dotfiles/polybar/config ~/.config/polybar
+		echo 'polybar config done'
+
 		mv ~/.i3/config ~/defaultBackups/config_i3
 		ln -s ~/Dotfiles/i3config/config ~/.i3/config
 		echo 'i3 config done'
@@ -153,6 +157,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm timeshift
   sudo pacman -S --noconfirm thunderbird
   sudo pacman -S --noconfirm tk #fixes gitk
+  sudo pacman -S --noconfirm polybar
   yay -S --noconfirm xcursor-dmz
   yay -S --noconfirm google-chrome
   yay -S --noconfirm spotify
