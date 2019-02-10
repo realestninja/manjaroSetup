@@ -158,6 +158,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm thunderbird
   sudo pacman -S --noconfirm tk #fixes gitk
   sudo pacman -S --noconfirm polybar
+  sudo pacman -S --noconfirm udevil
   yay -S --noconfirm xcursor-dmz
   yay -S --noconfirm google-chrome
   yay -S --noconfirm spotify
