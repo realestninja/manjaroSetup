@@ -71,6 +71,9 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/bash/.bash_aliases ~
 		echo '.bash_aliases done'
 
+		ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
+		echo '.kitty done'
+
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		echo '.vimrc done'
 
@@ -153,6 +156,7 @@ if [ ~/temp ]; then
 fi
 
 if [[ $do_software == y* ]]; then
+  sudo pacman -S --noconfirm kitty
   sudo pacman -S --noconfirm neofetch
   sudo pacman -S --noconfirm feh
   sudo pacman -S --noconfirm cowsay
