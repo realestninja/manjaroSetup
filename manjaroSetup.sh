@@ -167,6 +167,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm filezilla
   sudo pacman -S --noconfirm tmux
   sudo pacman -S --noconfirm fzf
+  sudo pacman -S --noconfirm the_silver_searcher
   sudo pacman -S --noconfirm telegram-desktop
   sudo pacman -S --noconfirm unzip
   sudo pacman -S --noconfirm zip
