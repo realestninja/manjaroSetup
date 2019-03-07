@@ -95,6 +95,15 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/i3config/config ~/.i3/config
 		echo 'i3 config done'
 
+		mv ~/.config/ranger/rc.conf ~/defaultBackups/rc.conf
+		ln -s ~/Dotfiles/ranger/rc.conf
+		echo 'ranger config done'
+
+		ln -s ~/Dotfiles/git/.gitconfig ~/.gitconfig
+		cp ~/Dotfiles/git/user.gitconfig.example ~/Dotfiles/git/user.gitconfig
+		ln -s ~/Dotfiles/git/user.gitconfig ~/user.gitconfig
+		echo 'git config done'
+
 		sudo ln -s ~/Dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
 		echo 'create_i3_config done'
 		sudo chmod a+x /usr/local/bin/create_i3_config
