@@ -104,6 +104,10 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/git/user.gitconfig ~/user.gitconfig
 		echo 'git config done'
 
+		rm ~/.profile
+		ln -s ~/Dotfiles/profile/.profile ~/.profile
+		echo 'profile done'
+
 		sudo ln -s ~/Dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
 		echo 'create_i3_config done'
 		sudo chmod a+x /usr/local/bin/create_i3_config
