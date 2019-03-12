@@ -191,8 +191,9 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm polybar
   sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
-  yay -S --noconfirm xcursor-dmz
+  sudo pacman -R --noconfirm palemoon-bin
   yay -S --noconfirm google-chrome
+  yay -S --noconfirm xcursor-dmz
   yay -S --noconfirm spotify
   yay -S --noconfirm unimatrix-git
   yay -S --noconfirm light-git
