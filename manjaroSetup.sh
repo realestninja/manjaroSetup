@@ -211,6 +211,7 @@ if [[ $do_dev_software == y* ]]; then
   sudo pacman -S --noconfirm nodejs
   sudo pacman -S --noconfirm npm
   sudo npm i -g eslint
+  sudo npm i -g n
   sudo pacman -S --noconfirm ruby
   sudo pacman -S --noconfirm lua51
 fi
