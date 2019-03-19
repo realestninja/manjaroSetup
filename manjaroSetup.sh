@@ -191,6 +191,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm polybar
   sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
+  sudo pacman -S --noconfirm unclutter
   sudo pacman -R --noconfirm palemoon-bin
   sudo pacman -S --noconfirm youtube-dl
   yay -S --noconfirm xcursor-dmz
