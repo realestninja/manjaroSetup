@@ -70,6 +70,8 @@ if [ ! -d ~/Dotfiles ]; then
 		echo '.bashrc done'
 		ln -s ~/Dotfiles/bash/.bash_aliases ~
 		echo '.bash_aliases done'
+		ln -s ~/Dotfiles/bash/.bash_machine ~
+		echo '.bash_machine done'
 
 		ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
 		echo '.kitty done'
