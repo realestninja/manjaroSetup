@@ -72,6 +72,8 @@ if [ ! -d ~/Dotfiles ]; then
 		echo '.bash_aliases done'
 		ln -s ~/Dotfiles/bash/.bash_machine ~
 		echo '.bash_machine done'
+		ln -s ~/Dotfiles/bash/.git-completion.bash ~
+		echo '.git-completion.bash done'
 
 		ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
 		echo '.kitty done'
