@@ -45,6 +45,10 @@ echo 'Install Software?'
 read do_software
 
 echo ''
+echo 'Install nitroshare?'
+read do_nitroshare
+
+echo ''
 echo 'Get LaTeX?'
 read do_latex
 
@@ -168,6 +172,15 @@ if [ ~/temp ]; then
 		git clone https://aur.archlinux.org/yay.git
 		cd yay
 		makepkg -si
+		cd ~
+	fi
+
+	if [[ $do_nitroshare == y* ]]; then
+		cd ~/temp
+		wget https://aur.archlinux.org/cgit/aur.git/snapshot/nitroshare.tar.gz
+		tar xf nitroshare.tar.gz
+		cd nitroshare
+		makepkg -sri
 		cd ~
 	fi
 fi
