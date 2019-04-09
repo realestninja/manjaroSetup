@@ -189,6 +189,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm kitty
   sudo pacman -S --noconfirm neofetch
   sudo pacman -S --noconfirm feh
+  sudo pacman -S --noconfirm flameshot
   sudo pacman -S --noconfirm cowsay
   sudo pacman -S --noconfirm fortune-mod
   sudo pacman -S --noconfirm xclip
