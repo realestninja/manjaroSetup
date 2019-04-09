@@ -21,3 +21,10 @@ to fix gitk
 # android phone connection
 mkdir ~/AndroidPhone
 jmtpfs mount ~/AndroidPhone
+
+# nvidia shit:
+sudo pacman -S optimus-manager
+sudo systemctl start optimus-manager
+sudo systemctl status optimus-manager
+optimus-manager --switch nvidia
+optimus-manager --set-startup nvidia
