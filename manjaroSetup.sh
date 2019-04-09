@@ -120,6 +120,9 @@ if [ ! -d ~/Dotfiles ]; then
 		echo 'create_i3_config done'
 		sudo chmod a+x /usr/local/bin/create_i3_config
 		echo 'chmod a+x has been applied'
+
+		sudo sh ~/Dotfiles/make_scriptcollection_global.sh
+		echo 'Available scripts are now global'
 	fi
 fi
 
