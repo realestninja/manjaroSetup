@@ -100,7 +100,7 @@ if [ ! -d ~/Dotfiles ]; then
 		echo 'polybar config done'
 
 		mv ~/.i3/config ~/defaultBackups/config_i3
-		ln -s ~/Dotfiles/i3config/config ~/.i3/config
+		ln -s ~/Dotfiles/i3config/i3.config ~/.i3/config
 		echo 'i3 config done'
 
 		mv ~/.config/ranger/rc.conf ~/defaultBackups/rc.conf
