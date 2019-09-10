@@ -34,3 +34,10 @@ sudo systemctl start optimus-manager
 sudo systemctl status optimus-manager
 optimus-manager --switch nvidia
 optimus-manager --set-startup nvidia
+
+
+https://www.reddit.com/r/i3wm/comments/4efbsm/mouse_speed/
+
+add vim to ignored packages:
+sudo vim /etc/pacman.conf
+IgnorePkg   = vim-runtime
