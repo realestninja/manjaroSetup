@@ -88,9 +88,6 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/alsa/.asoundrc ~
 		echo '.asoundrc done'
 
-		ln -s ~/Dotfiles/profile/.profile ~
-		echo '.profile done'
-
 		mv ~/.Xresources ~/defaultBackups
 		ln -s ~/Dotfiles/Xresources/.Xresources ~
 		echo '.Xresources done'
@@ -123,6 +120,8 @@ if [ ! -d ~/Dotfiles ]; then
 
 		sudo sh ~/Dotfiles/make_scriptcollection_global.sh
 		echo 'Available scripts are now global'
+
+		mkdir ~/OnePlus
 	fi
 fi
 
