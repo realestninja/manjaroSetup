@@ -226,6 +226,7 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm slack-desktop
   yay -S --noconfirm jmtpfs
   yay -S --noconfirm gucharmap
+  yay -S --noconfirm xmeasure
 fi
 
 if [[ $do_latex == y* ]]; then
