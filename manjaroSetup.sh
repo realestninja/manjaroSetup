@@ -227,6 +227,11 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm jmtpfs
   yay -S --noconfirm gucharmap
   yay -S --noconfirm xmeasure
+
+  sudo pacman -S --noconfirm kdeconnect
+  sudo ufw allow 1714:1764/udp
+  sudo ufw allow 1714:1764/tcp
+  sudo ufw reload
 fi
 
 if [[ $do_latex == y* ]]; then
