@@ -85,6 +85,9 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		echo '.vimrc done'
 
+		ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
+		echo 'coc-settings.json done'
+
 		ln -s ~/Dotfiles/alsa/.asoundrc ~
 		echo '.asoundrc done'
 
