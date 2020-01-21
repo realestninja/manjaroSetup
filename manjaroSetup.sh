@@ -191,6 +191,7 @@ if [ ~/temp ]; then
 fi
 
 if [[ $do_software == y* ]]; then
+  sudo pacman -S --noconfirm manjaro-settings-manager
   sudo pacman -S --noconfirm kitty
   sudo pacman -S --noconfirm pulseaudio
   sudo pacman -S --noconfirm neofetch
