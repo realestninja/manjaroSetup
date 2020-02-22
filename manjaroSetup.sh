@@ -70,12 +70,20 @@ if [ ! -d ~/Dotfiles ]; then
 
 		echo 'Creating symlinks:'
 
+		rm ~/.bashrc
 		ln -s ~/Dotfiles/bash/.bashrc ~
+		source ~/.bashrc
 		echo '.bashrc done'
 		ln -s ~/Dotfiles/bash/.bash_aliases ~
 		echo '.bash_aliases done'
 		ln -s ~/Dotfiles/bash/.bash_machine ~
 		echo '.bash_machine done'
+
+		cp ~/Dotfiles/git/user.gitconfig.example ~/Dotfiles/git/user.gitconfig
+		rm ~/.gitconfig
+		ln -s ~/Dotfiles/git/.gitconfig ~
+		echo '.gitconfig done'
+
 		ln -s ~/Dotfiles/bash/.git-completion.bash ~
 		echo '.git-completion.bash done'
 
@@ -85,19 +93,19 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		echo '.vimrc done'
 
-		ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
-		echo 'coc-settings.json done'
+		#ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
+		#echo 'coc-settings.json done'
 
-		ln -s ~/Dotfiles/alsa/.asoundrc ~
-		echo '.asoundrc done'
+		#ln -s ~/Dotfiles/alsa/.asoundrc ~
+		#echo '.asoundrc done'
 
-		mv ~/.Xresources ~/defaultBackups
-		ln -s ~/Dotfiles/Xresources/.Xresources ~
-		echo '.Xresources done'
+		#mv ~/.Xresources ~/defaultBackups
+		#ln -s ~/Dotfiles/Xresources/.Xresources ~
+		#echo '.Xresources done'
 
-		mkdir ~/.config/polybar
-		ln -s ~/Dotfiles/polybar/config ~/.config/polybar
-		echo 'polybar config done'
+		#mkdir ~/.config/polybar
+		#ln -s ~/Dotfiles/polybar/config ~/.config/polybar
+		#echo 'polybar config done'
 
 		mv ~/.i3/config ~/defaultBackups/config_i3
 		ln -s ~/Dotfiles/i3config/i3.config ~/.i3/config
@@ -112,9 +120,9 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/git/user.gitconfig ~/user.gitconfig
 		echo 'git config done'
 
-		rm ~/.profile
-		ln -s ~/Dotfiles/profile/.profile ~/.profile
-		echo 'profile done'
+		#rm ~/.profile
+		#ln -s ~/Dotfiles/profile/.profile ~/.profile
+		#echo 'profile done'
 
 		sudo ln -s ~/Dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
 		echo 'create_i3_config done'
