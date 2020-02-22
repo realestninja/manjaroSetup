@@ -41,3 +41,6 @@ https://www.reddit.com/r/i3wm/comments/4efbsm/mouse_speed/
 add vim to ignored packages:
 sudo vim /etc/pacman.conf
 IgnorePkg   = vim-runtime
+
+Falls runtime falsch ist:
+export VIMRUNTIME=/usr/share/vim/vim82

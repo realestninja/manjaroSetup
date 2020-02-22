@@ -44,13 +44,13 @@ echo ''
 echo 'Install Software?'
 read do_software
 
-echo ''
-echo 'Install nitroshare?'
-read do_nitroshare
+# echo ''
+# echo 'Install nitroshare?'
+# read do_nitroshare
 
-echo ''
-echo 'Get LaTeX?'
-read do_latex
+# echo ''
+# echo 'Get LaTeX?'
+# read do_latex
 
 echo ''
 echo 'Install nodejs, npm, ruby etc.?'
@@ -157,19 +157,27 @@ if [ ~/temp ]; then
 		sudo pacman -R vim
 		cd ~/temp/
 		git clone --depth 1 https://github.com/vim/vim.git
+		echo "--------------------"
+		echo "Python path example:"
+		echo "/usr/lib/python3.8/config-3.8-x86_64-linux-gnu"
+		echo "Latest python path?"
+		read pyth_path
+		echo "Latest vim version? (Example: 82)"
+		read vim_version
 		cd vim
 		./configure --with-features=huge \
 			      --enable-multibyte \
 			      --enable-rubyinterp=yes \
 			      --enable-pythoninterp=yes \
 			      --enable-python3interp=yes \
-			      --with-python3-config-dir=/usr/lib/python3.5/config-3.6m-x86_64-linux-gnu \
+			      --with-python3-config-dir=$pyth_path \
 			      --enable-perlinterp=yes \
 			      --enable-luainterp=yes \
 			      --enable-gui=gtk2 --enable-cscope --prefix=/usr
-		make VIMRUNTIMEDIR=/usr/share/vim/vim81
+		make VIMRUNTIMEDIR=/usr/share/vim/vim$vim_version
 		sudo make install
 		git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+		vim +PluginInstall +qall
 	fi
 
 	if [[ $do_yay == y* ]]; then
@@ -180,22 +188,25 @@ if [ ~/temp ]; then
 		cd ~
 	fi
 
-	if [[ $do_nitroshare == y* ]]; then
-		cd ~/temp
-		wget https://aur.archlinux.org/cgit/aur.git/snapshot/nitroshare.tar.gz
-		tar xf nitroshare.tar.gz
-		cd nitroshare
-		makepkg -sri
-		cd ~
-	fi
+	# if [[ $do_nitroshare == y* ]]; then
+		# cd ~/temp
+		# wget https://aur.archlinux.org/cgit/aur.git/snapshot/nitroshare.tar.gz
+		# tar xf nitroshare.tar.gz
+		# cd nitroshare
+		# makepkg -sri
+		# cd ~
+	# fi
 fi
 
 if [[ $do_software == y* ]]; then
+  sudo pacman -S --noconfirm ranger
+  sudo pacman -S --noconfirm rofi
   sudo pacman -S --noconfirm manjaro-settings-manager
   sudo pacman -S --noconfirm kitty
   sudo pacman -S --noconfirm pulseaudio
   sudo pacman -S --noconfirm neofetch
   sudo pacman -S --noconfirm feh
+  sudo pacman -S --noconfirm scrot
   sudo pacman -S --noconfirm flameshot
   sudo pacman -S --noconfirm cowsay
   sudo pacman -S --noconfirm fortune-mod
@@ -215,7 +226,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm thunderbird
   sudo pacman -S --noconfirm tk #fixes gitk
   sudo pacman -S --noconfirm polybar
-  sudo pacman -S --noconfirm udevil
+  # sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
   sudo pacman -S --noconfirm unclutter
   sudo pacman -R --noconfirm palemoon-bin
@@ -226,7 +237,7 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm spotify
   yay -S --noconfirm unimatrix-git
   yay -S --noconfirm light-git
-  yay -S --noconfirm slack-desktop
+  # yay -S --noconfirm slack-desktop
   yay -S --noconfirm jmtpfs
   yay -S --noconfirm gucharmap
   yay -S --noconfirm xmeasure
@@ -237,9 +248,9 @@ if [[ $do_software == y* ]]; then
   sudo ufw reload
 fi
 
-if [[ $do_latex == y* ]]; then
-  sudo pacman -S --noconfirm texlive-most texlive-lang
-fi
+# if [[ $do_latex == y* ]]; then
+  # sudo pacman -S --noconfirm texlive-most texlive-lang
+# fi
 
 if [[ $do_dev_software == y* ]]; then
   sudo pacman -S --noconfirm nodejs
