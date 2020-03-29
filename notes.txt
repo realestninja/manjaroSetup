@@ -44,3 +44,7 @@ IgnorePkg   = vim-runtime
 
 Falls runtime falsch ist:
 export VIMRUNTIME=/usr/share/vim/vim82
+
+to add to keychain:
+v after `sudo pacman -S keychain`
+ssh-add ~/.ssh/id_rsa
