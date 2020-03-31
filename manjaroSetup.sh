@@ -240,6 +240,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm unclutter
   sudo pacman -R --noconfirm palemoon-bin
   sudo pacman -S --noconfirm youtube-dl
+  sudo pacman -S --noconfirm simplescreenrecorder
   sudo pacman -S --noconfirm ntp && sudo timedatectl set-ntp true
   sudo pacman -S --noconfirm ncdu
   yay -S --noconfirm xcursor-dmz
