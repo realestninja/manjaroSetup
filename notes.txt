@@ -48,3 +48,9 @@ export VIMRUNTIME=/usr/share/vim/vim82
 to add to keychain:
 v after `sudo pacman -S keychain`
 ssh-add ~/.ssh/id_rsa
+
+# bluetooth headset
+blueman-applet
+sudo pacman -S pulseaudio-bluetooth
+pulseaudio -k # kills and restarts pulseaudio
+pavucontrol
