@@ -17,7 +17,7 @@ echo 'Create Dotfiles and symlinks?'
 read do_symlinks
 
 echo ''
-echo 'Create folder for screenshots?'
+echo 'Create folders for screenshots and lockscreen?'
 read do_screenshot_folder
 
 echo ''
@@ -139,6 +139,8 @@ fi
 if [ ! -d ~/Pictures/Screenshots ]; then
 	if [[ $do_screenshot_folder == y* ]]; then
 		mkdir ~/Pictures/Screenshots
+		mkdir ~/Pictures/Lockscreen
+		touch ~/Pictures/Lockscreen/lockscreen.png
 	fi
 fi
 
@@ -249,9 +251,9 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm unimatrix-git
   yay -S --noconfirm light-git
   # yay -S --noconfirm slack-desktop
-  yay -S --noconfirm jmtpfs
-  yay -S --noconfirm gucharmap
-  yay -S --noconfirm xmeasure
+  # yay -S --noconfirm jmtpfs
+  # yay -S --noconfirm gucharmap
+  # yay -S --noconfirm xmeasure
 
   sudo pacman -S --noconfirm kdeconnect
   sudo ufw allow 1714:1764/udp
