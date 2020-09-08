@@ -54,3 +54,12 @@ blueman-applet
 sudo pacman -S pulseaudio-bluetooth
 pulseaudio -k # kills and restarts pulseaudio
 pavucontrol
+
+# set up web server
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-de
+# set up ssh for remote server
+ssh-copy-id your-user-name@your-ubuntu-server-name
+
+
+# cleanup yay and pacman caches
+yay -Sc
