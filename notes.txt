@@ -63,3 +63,8 @@ ssh-copy-id your-user-name@your-ubuntu-server-name
 
 # cleanup yay and pacman caches
 yay -Sc
+
+# protonvpn
+yay -S protonvpn-cli-ng
+sudo protonvpn init
+sudo protonvpn connect
