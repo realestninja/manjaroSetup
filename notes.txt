@@ -68,3 +68,11 @@ yay -Sc
 yay -S protonvpn-cli-ng
 sudo protonvpn init
 sudo protonvpn connect
+
+# raise wmem_max
+# wmem_max value can be displayed here:
+cat /proc/sys/net/core/wmem_max
+# edit by setting value here:
+vim /etc/sysctl.d/99-sysctl.conf
+# add this value:
+net.core.wmem_max = 8388608
