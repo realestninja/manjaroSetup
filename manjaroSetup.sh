@@ -251,6 +251,7 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm spotify
   yay -S --noconfirm unimatrix-git
   yay -S --noconfirm light-git
+  yay -S --noconfirm rofi-emoji
   # yay -S --noconfirm slack-desktop
   # yay -S --noconfirm jmtpfs
   # yay -S --noconfirm gucharmap
