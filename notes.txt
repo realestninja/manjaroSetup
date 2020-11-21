@@ -76,3 +76,7 @@ cat /proc/sys/net/core/wmem_max
 vim /etc/sysctl.d/99-sysctl.conf
 # add this value:
 net.core.wmem_max = 8388608
+
+
+# emoji support
+https://chrpaul.de/2019/07/Enable-colour-emoji-support-on-Manjaro-Linux.html
