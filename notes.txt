@@ -80,3 +80,10 @@ net.core.wmem_max = 8388608
 
 # emoji support
 https://chrpaul.de/2019/07/Enable-colour-emoji-support-on-Manjaro-Linux.html
+
+
+# rofi styled dependencies
+fonts: https://www.dafont.com/comfortaa.font
+
+# get list of all manually installed packages
+https://www.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself/
