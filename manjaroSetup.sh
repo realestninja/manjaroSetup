@@ -91,7 +91,8 @@ if [ ! -d ~/Dotfiles ]; then
 		echo '.kitty done'
 
 		ln -s ~/Dotfiles/vim/.vimrc ~
-		echo '.vimrc done'
+		ln -s ~/Dotfiles/vim/filetype.vim ~/.vim/
+		echo 'vim settings done'
 
 		ln -s ~/Dotfiles/fontconfig/font.conf ~/.config/font.conf
 		echo 'font.conf done'
