@@ -96,6 +96,9 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/fontconfig/font.conf ~/.config/font.conf
 		echo 'font.conf done'
 
+		ln -s ~/Dotfiles/rofi/config.rasi ~/.config/rofi
+		echo 'rofi config done'
+
 		#ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
 		#echo 'coc-settings.json done'
 
