@@ -251,6 +251,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm simplescreenrecorder
   sudo pacman -S --noconfirm ntp && sudo timedatectl set-ntp true
   sudo pacman -S --noconfirm ncdu
+  sudo pacman -S --noconfirm noto-fonts-emoji
   yay -S --noconfirm protonvpn-cli-ng
   yay -S --noconfirm xcursor-dmz
   yay -S --noconfirm google-chrome
