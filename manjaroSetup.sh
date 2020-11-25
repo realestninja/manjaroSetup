@@ -93,6 +93,10 @@ if [ ! -d ~/Dotfiles ]; then
 		ln -s ~/Dotfiles/vim/.vimrc ~
 		echo '.vimrc done'
 
+		mkdir ~/.config/picom
+		ln -s ~/Dotfiles/picom/picom.conf ~/.config/picom/
+		echo 'picom.conf done'
+
 		ln -s ~/Dotfiles/fontconfig/font.conf ~/.config/font.conf
 		echo 'font.conf done'
 
