@@ -219,6 +219,8 @@ if [ ~/temp ]; then
 fi
 
 if [[ $do_software == y* ]]; then
+  sudo pacman -R --noconfirm palemoon-bin
+
   sudo pacman -S --noconfirm ranger
   sudo pacman -S --noconfirm rofi
   sudo pacman -S --noconfirm manjaro-settings-manager
@@ -246,16 +248,15 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm timeshift
   sudo pacman -S --noconfirm thunderbird
   sudo pacman -S --noconfirm tk #fixes gitk
-  sudo pacman -S --noconfirm polybar
   sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
   sudo pacman -S --noconfirm unclutter
-  sudo pacman -R --noconfirm palemoon-bin
   sudo pacman -S --noconfirm youtube-dl
   sudo pacman -S --noconfirm simplescreenrecorder
   sudo pacman -S --noconfirm ntp && sudo timedatectl set-ntp true
   sudo pacman -S --noconfirm ncdu
   sudo pacman -S --noconfirm noto-fonts-emoji
+  yay -S --noconfirm polybar-git
   yay -S --noconfirm protonvpn-cli-ng
   yay -S --noconfirm xcursor-dmz
   yay -S --noconfirm google-chrome
