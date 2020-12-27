@@ -66,6 +66,7 @@ if [ ! -d ~/Dotfiles ]; then
 		mkdir ~/Dotfiles
 		mkdir ~/Code
 		mkdir ~/defaultBackups
+		mkdir ~/perm
 		git clone git@github.com:realestninja/Dotfiles.git ~/Dotfiles
 
 		echo 'Creating symlinks:'
@@ -138,6 +139,7 @@ if [ ! -d ~/Dotfiles ]; then
 		echo 'create_i3_config done'
 		sudo chmod a+x /usr/local/bin/create_i3_config
 		echo 'chmod a+x has been applied'
+		git clone git@github.com:realestninja/i3-individual-workspace-actions.git ~/perm/i3-individual-workspace-actions
 
 		sudo sh ~/Dotfiles/make_scriptcollection_global.sh
 		echo 'Available scripts are now global'
