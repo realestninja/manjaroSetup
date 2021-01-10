@@ -268,6 +268,7 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm rofi-emoji
   yay -S --noconfirm ttf-symbola
   yay -S --noconfirm gucharmap
+  yay -S --noconfirm xrectsel
   # yay -S --noconfirm slack-desktop
   # yay -S --noconfirm jmtpfs
   # yay -S --noconfirm xmeasure
