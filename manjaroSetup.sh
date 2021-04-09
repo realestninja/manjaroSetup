@@ -223,6 +223,7 @@ fi
 if [[ $do_software == y* ]]; then
   sudo pacman -R --noconfirm palemoon-bin
 
+  sudo pacman -S --noconfirm net-tools
   sudo pacman -S --noconfirm ranger
   sudo pacman -S --noconfirm rofi
   sudo pacman -S --noconfirm manjaro-settings-manager
