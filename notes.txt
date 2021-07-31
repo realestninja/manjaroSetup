@@ -87,3 +87,6 @@ fonts: https://www.dafont.com/comfortaa.font
 
 # get list of all manually installed packages
 https://www.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself/
+
+# update mirrors
+sudo pacman-mirrors -g
