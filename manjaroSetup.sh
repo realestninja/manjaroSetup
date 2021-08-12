@@ -225,6 +225,7 @@ if [[ $do_software == y* ]]; then
 
   sudo pacman -S --noconfirm net-tools
   sudo pacman -S --noconfirm ranger
+  sudo pacman -S --noconfirm thunar
   sudo pacman -S --noconfirm rofi
   sudo pacman -S --noconfirm manjaro-settings-manager
   sudo pacman -S --noconfirm keychain
