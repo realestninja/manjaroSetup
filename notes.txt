@@ -96,3 +96,12 @@ xdpyinfo | grep -B2 resolution
 
 # get window name
 xprop | grep WM_CLASS
+
+# gpg: keyserver receive failed: No name
+gpg --keyserver <server> --recv-key <key>
+
+available keyservers:
+keyserver.ubuntu.com 71
+pgp.mit.edu
+keyserver.pgp.com 49
+keys.openpgp.org 38
