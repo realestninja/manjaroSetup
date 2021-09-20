@@ -105,3 +105,13 @@ keyserver.ubuntu.com 71
 pgp.mit.edu
 keyserver.pgp.com 49
 keys.openpgp.org 38
+
+# check dependencies
+pacman -Qi <package>
+
+# invalid signatures -> refresh keys
+sudo rm -r /etc/pacman.d/gnupg
+sudo pacman-key --init
+sudo pacman-key --populate archlinux manjaro
+sudo pacman-key --refresh-keys
+sudo pacman -Syu
