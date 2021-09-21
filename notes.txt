@@ -115,3 +115,6 @@ sudo pacman-key --init
 sudo pacman-key --populate archlinux manjaro
 sudo pacman-key --refresh-keys
 sudo pacman -Syu
+
+# scale image
+convert -scale 3840x2160 source-image.jpg lockscreen.png
