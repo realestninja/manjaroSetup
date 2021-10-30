@@ -260,6 +260,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm ntp && sudo timedatectl set-ntp true
   sudo pacman -S --noconfirm ncdu
   sudo pacman -S --noconfirm noto-fonts-emoji
+  yay -S --noconfirm caffeine
   yay -S --noconfirm polybar-git
   yay -S --noconfirm protonvpn-cli-ng
   yay -S --noconfirm xcursor-dmz
