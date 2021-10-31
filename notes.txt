@@ -118,3 +118,24 @@ sudo pacman -Syu
 
 # scale image
 convert -scale 3840x2160 source-image.jpg lockscreen.png
+
+################
+# how to mount synology NAS
+## enable nfs on NAS side:
+* control panel -> file services -> NFS -> Enable NFS
+* control panel -> file services -> NFS -> pick max protocol
+
+## set up rights for user
+control panel -> shared folder -> <pick folder> -> nfs permissions:
+* ip adress of client
+* read/right
+* squash: no mapping
+* async: yes
+* non priv: yes
+* cross mount: yes
+
+## mount drive
+example:
+sudo mkdir /media/nas
+sudo mount 192.168.0.95:/volume1/nikhil /media/nas
+################
