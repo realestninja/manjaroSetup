@@ -142,3 +142,7 @@ sudo mount 192.168.0.95:/volume1/nikhil /media/nas
 
 # list pacman/yay package orphans
 pacman -Qdt
+
+# restart mouse
+sudo modprobe -r psmouse
+sudo modprobe psmouse
