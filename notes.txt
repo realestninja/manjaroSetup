@@ -146,3 +146,9 @@ pacman -Qdt
 # restart mouse
 sudo modprobe -r psmouse
 sudo modprobe psmouse
+
+# set correct DPI
+## get monitor dpi
+xdpyinfo | grep -B 2 resolution
+## set dpi in .Xresources, then:
+xrdb ~/.Xresources
