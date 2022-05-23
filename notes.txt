@@ -88,7 +88,7 @@ fonts: https://www.dafont.com/comfortaa.font
 # get list of all manually installed packages
 https://www.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself/
 
-# update mirrors
+# update mirrors (can fix slow dl-speed)
 sudo pacman-mirrors -g
 
 # get DPI of display -> set it in .Xresources
