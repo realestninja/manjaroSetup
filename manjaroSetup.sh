@@ -63,6 +63,7 @@ echo 'All clear!'
 
 if [ ! -d ~/Dotfiles ]; then
 	if [[ $do_symlinks == y* ]]; then
+		# cargo install multiconf
 		mkdir ~/Dotfiles
 		mkdir ~/Code
 		mkdir ~/defaultBackups
