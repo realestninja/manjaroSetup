@@ -152,3 +152,7 @@ sudo modprobe psmouse
 xdpyinfo | grep -B 2 resolution
 ## set dpi in .Xresources, then:
 xrdb ~/.Xresources
+
+# reload network drivers:
+sudo modprobe -rv ath10k_pci
+sudo modprobe -v ath10k_pci
