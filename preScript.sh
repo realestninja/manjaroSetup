@@ -9,6 +9,7 @@ echo "#         PreScript          #"
 echo '#                            #'
 echo '##############################'
 
+sudo pacman-mirrors -f5
 sudo pacman-db-upgrade && sync
 sudo pacman -Syu
 

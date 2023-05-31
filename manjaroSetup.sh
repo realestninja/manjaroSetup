@@ -222,19 +222,17 @@ if [ ~/temp ]; then
 fi
 
 if [[ $do_software == y* ]]; then
-  sudo pacman -R --noconfirm palemoon-bin
-
-  sudo pacman -S --noconfirm net-tools
+  sudo pacman -S --noconfirm make
+  sudo pacman -S --noconfirm tlp # check wiki -> enable service + mask
+  # sudo pacman -S --noconfirm net-tools
   sudo pacman -S --noconfirm ranger
-  sudo pacman -S --noconfirm thunar
-  sudo pacman -S --noconfirm rofi
+  sudo pacman -S --noconfirm nautilus
   sudo pacman -S --noconfirm manjaro-settings-manager
   sudo pacman -S --noconfirm keychain
   sudo pacman -S --noconfirm kitty
   sudo pacman -S --noconfirm pulseaudio
   sudo pacman -S --noconfirm neofetch
   sudo pacman -S --noconfirm feh
-  sudo pacman -S --noconfirm scrot
   sudo pacman -S --noconfirm flameshot
   sudo pacman -S --noconfirm cowsay
   sudo pacman -S --noconfirm fortune-mod
@@ -242,7 +240,6 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm clementine
   sudo pacman -S --noconfirm gthumb
   sudo pacman -S --noconfirm filezilla
-  sudo pacman -S --noconfirm tmux
   sudo pacman -S --noconfirm fzf
   sudo pacman -S --noconfirm diff-so-fancy
   sudo pacman -S --noconfirm the_silver_searcher
@@ -252,20 +249,17 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm unrar
   sudo pacman -S --noconfirm timeshift
   sudo pacman -S --noconfirm thunderbird
-  sudo pacman -S --noconfirm tk #fixes gitk
-  sudo pacman -S --noconfirm udevil
+  sudo pacman -S --noconfirm docker
+  # sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
   sudo pacman -S --noconfirm unclutter
-  sudo pacman -S --noconfirm youtube-dl
+  # sudo pacman -S --noconfirm youtube-dl
   sudo pacman -S --noconfirm simplescreenrecorder
-  sudo pacman -S --noconfirm ntp && sudo timedatectl set-ntp true
   sudo pacman -S --noconfirm ncdu
   sudo pacman -S --noconfirm noto-fonts-emoji
-  yay -S --noconfirm ttf-meslo
-  yay -S --noconfirm caffeine
   yay -S --noconfirm polybar-git
-  yay -S --noconfirm protonvpn-cli-ng
   yay -S --noconfirm xcursor-dmz
+  yay -S --noconfirm swaytools
   yay -S --noconfirm google-chrome
   yay -S --noconfirm spotify
   yay -S --noconfirm unimatrix-git
