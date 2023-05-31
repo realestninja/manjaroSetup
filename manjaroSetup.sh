@@ -265,17 +265,27 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm unimatrix-git
   yay -S --noconfirm light-git
   yay -S --noconfirm rofi-emoji
-  yay -S --noconfirm ttf-symbola
-  yay -S --noconfirm gucharmap
-  yay -S --noconfirm xrectsel
-  # yay -S --noconfirm slack-desktop
-  # yay -S --noconfirm jmtpfs
-  # yay -S --noconfirm xmeasure
+  # cargo install rot8 # autorotation on ThinkPad Yoga
 
-  sudo pacman -S --noconfirm kdeconnect
-  sudo ufw allow 1714:1764/udp
-  sudo ufw allow 1714:1764/tcp
-  sudo ufw reload
+  # nvim ide
+  sudo pacman -S --noconfirm nodejs
+  sudo pacman -S --noconfirm npm
+  sudo pacman -S --noconfirm ripgrep
+
+  yay -S nvim-packer-git --noconfirm # nvim package manager
+  yay -Sy quick-lint-js --noconfirm # nvim js lsp
+
+  sudo npm i -g n
+  sudo npm i -g eslint
+  sudo npm i -g eslint_d
+  sudo npm i -g stylelint
+  sudo npm i -g neovim
+  sudo npm i -g diagnostic-languageserver # used for nvim lsp https://www.jihadwaspada.com/post/how-to-setup-stylelint-with-neovim-lsp/
+
+  # sudo pacman -S --noconfirm kdeconnect
+  # sudo ufw allow 1714:1764/udp
+  # sudo ufw allow 1714:1764/tcp
+  # sudo ufw reload
 fi
 
 # if [[ $do_latex == y* ]]; then
@@ -283,11 +293,6 @@ fi
 # fi
 
 if [[ $do_dev_software == y* ]]; then
-  sudo pacman -S --noconfirm nodejs
-  sudo pacman -S --noconfirm npm
-  sudo npm i -g n
-  sudo npm i -g eslint
-  sudo npm i -g stylelint
   yay -S --noconfirm ctags
   sudo pacman -S --noconfirm ruby
   sudo pacman -S --noconfirm lua51
