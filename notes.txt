@@ -156,3 +156,6 @@ xrdb ~/.Xresources
 # reload network drivers:
 sudo modprobe -rv ath10k_pci
 sudo modprobe -v ath10k_pci
+
+# when facing an upgrade error "files exist in filesystem"
+sudo pacman -Syyu --overwrite "*"
