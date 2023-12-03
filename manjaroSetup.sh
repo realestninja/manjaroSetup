@@ -245,6 +245,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm diff-so-fancy
   sudo pacman -S --noconfirm the_silver_searcher
   sudo pacman -S --noconfirm telegram-desktop
+  sudo pacman -S --noconfirm signal-desktop
   sudo pacman -S --noconfirm unzip
   sudo pacman -S --noconfirm zip
   sudo pacman -S --noconfirm unrar
