@@ -115,6 +115,9 @@ sudo pacman-key --init
 sudo pacman-key --populate archlinux manjaro
 sudo pacman-key --refresh-keys
 sudo pacman -Syu
+# (^ this doesn't work in the jonas strassel case)
+# instead:
+sudo rm -f /var/lib/pacman/sync/manjaro-sway.db.sig
 
 # scale image
 convert -scale 3840x2160 source-image.jpg lockscreen.png
