@@ -269,6 +269,7 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm rofi-emoji
   yay -S --noconfirm ttf-indic-otf # hindi
   # cargo install rot8 # autorotation on ThinkPad Yoga
+  yay -S --noconfirm postman-bin
 
   # nvim ide
   sudo pacman -S --noconfirm nodejs

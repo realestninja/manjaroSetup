@@ -162,3 +162,6 @@ sudo modprobe -v ath10k_pci
 
 # when facing an upgrade error "files exist in filesystem"
 sudo pacman -Syyu --overwrite "*"
+
+# run postman electron with compatibility:
+postman --enable-features=UseOzonePlatform --ozone-platform=wayland
