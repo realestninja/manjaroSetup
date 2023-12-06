@@ -278,6 +278,7 @@ if [[ $do_software == y* ]]; then
 
   yay -S nvim-packer-git --noconfirm # nvim package manager
   yay -Sy quick-lint-js --noconfirm # nvim js lsp
+  yay -S rust-analyzer --noconfirm # nvim rust setup
 
   sudo npm i -g n
   sudo npm i -g eslint
