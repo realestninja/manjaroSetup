@@ -169,7 +169,10 @@ fi
 
 if [[ $nerdfonts == y* ]]; then
 	mkdir ~/Downloads/fonts
+	wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf -P ~/Downloads/fonts
   wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf -P ~/Downloads/fonts
+  wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Inconsolata/InconsolataNerdFontMono-Regular.ttf -P ~/Downloads/fonts
+
 	sudo cp ~/Downloads/fonts/*.ttf /usr/share/fonts/TTF/
 	sudo cp ~/Downloads/fonts/*.otf /usr/share/fonts/OTF/
 	fc-cache
