@@ -228,6 +228,8 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm make
   sudo pacman -S --noconfirm tlp # check wiki -> enable service + mask
   # sudo pacman -S --noconfirm net-tools
+  sudo pacman -S --noconfirm wireguard-tools
+  sudo pacman -S --noconfirm openresolv # required by wireguard
   sudo pacman -S --noconfirm ranger
   sudo pacman -S --noconfirm nautilus
   sudo pacman -S --noconfirm manjaro-settings-manager

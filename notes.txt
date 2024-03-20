@@ -165,3 +165,12 @@ sudo pacman -Syyu --overwrite "*"
 
 # run postman electron with compatibility:
 postman --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+# wireguard
+wireguard conf needs to be placed in /etc/wireguard/
+example: /etc/wireguard/wg0.conf -> available as wg0
+
+usage:
+sudo wg-quick up wg0
+sudo wg-quick down wg0
+sudo wg show
