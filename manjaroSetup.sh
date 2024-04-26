@@ -257,6 +257,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm timeshift
   sudo pacman -S --noconfirm thunderbird
   sudo pacman -S --noconfirm docker
+  sudo pacman -S --noconfirm nheko
   # sudo pacman -S --noconfirm udevil
   sudo pacman -S --noconfirm playerctl
   sudo pacman -S --noconfirm unclutter
