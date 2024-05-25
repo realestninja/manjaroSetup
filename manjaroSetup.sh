@@ -245,6 +245,7 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm xclip
   sudo pacman -S --noconfirm clementine
   sudo pacman -S --noconfirm gthumb
+  sudo pacman -S --noconfirm gimp
   sudo pacman -S --noconfirm filezilla
   sudo pacman -S --noconfirm fzf
   sudo pacman -S --noconfirm diff-so-fancy
